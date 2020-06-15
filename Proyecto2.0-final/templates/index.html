@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body style="background: #808080;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #3fada8, #808080);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #3fada8, #808080); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
+ <center>
+<form action="/" method="POST">
+    <p SIZE=5 style = "font-family:Brush Script MT;">
+        <font size="8">
+PROYECTO DE APRENDIZAJE DE MÁQUINA
+            </font>
+</p>
+
+     <p SIZE=5 style = "font-family:Brush Script MT;">
+        <font size="8">
+Universidad Politécnica Salesiana
+            </font>
+</p>
+
+
+
+    <hr>
+        <label>
+
+
+            <h4>Ingresar Tweets De Busqueda</h4>
+            <input class="btn btn-primary btn-lg" type="text" name="palabra" value="" required/>
+        </label>
+    <br>
+        <label>
+            <h4>Ingresar Cantidad De Tweets</h4>
+            <input class="btn btn-primary btn-lg" type="number" name="cantidad" value=0 required/>
+        </label>
+
+        <br><br>
+         <button class="btn btn-primary btn-lg" type="submit"> Buscar </button>
+</form>
+     <br>
+
+<a class="btn btn-primary btn-lg"  href="http://localhost:5000/Segundo">Similitud</a>
+<!--<a class="btn btn-primary btn-lg" href="http://localhost:5000/Segundo">Punto dos </a>!-->
+<a class="btn btn-primary btn-lg" href="http://localhost:5000/Primero">TexBlob</a>
+<hr>
+<table class="table" id="tablaTweets" border="1">
+        <thead class="thead_dark">
+            <tr>
+                <th scope="col">TWEETS</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in range(tamanio) %}
+            <tr>
+                <td>{{ tweets[i] }}</td>
+                {% endfor %}
+            </tr>
+        </tbody>
+</table>
+</center>
+
+</body>
+</html>
